@@ -1,4 +1,4 @@
-# project-hotspot/thnx to AdnanHodzic
+# project-hotspot/ thnx to AdnanHodzic for the anon-hotspot file
 automatic install for anon-hotspot
 First get a wireless internet connection
 Then give the installer in the directory project-hotspot "chmod +x installer"
@@ -12,3 +12,4 @@ Then remove # before autologin-user-timeout=0
 Save that
 And reboot ur system
 have fun
+greetings influxbase
