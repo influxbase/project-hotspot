@@ -1,0 +1,41 @@
+#!/bin/bash
+echo "Will i install anon-hotspot?"
+
+read clone ;
+case $clone in
+             yes) echo "Ok i start the process";git clone https://github.com/AdnanHodzic/anon-hotspot.git;;
+              no) echo "Ok i will exit";sleep 2.0;exit;;
+esac
+
+clear
+echo "Premission to execute? "
+
+read exe ;
+case $exe in
+	  yes) cd anon-hotspot;sleep 1.0;chmod +x anon-hotspot;;
+	   no) echo "Ok i will exit";sleep 1.0;exit;;
+esac
+
+cp anon-hotspot /usr/bin/;
+anon-hotspot;
+anon-hotspot configure;
+sudo apt-get install vino dconf-editor;
+sleep 25.0;
+echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+echo "When dconfig-editor opens follow this command";
+echo " org ==> gnome ==> desktop ==>remote-access
+uncheck prompt-enabled
+uncheck require-encryption";
+echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+sleep 6.0;
+dconf-editor;
+cd;
+cd .config/;
+mkdir autostart;
+cd;
+cd project-hotspot;
+chmod +x startup.sh;
+cp /root/project-hotspot/vino.desktop /root/.config/autostart;
+
+
+ 

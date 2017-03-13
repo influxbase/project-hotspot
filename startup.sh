@@ -1,0 +1,1 @@
+sudo anon-hotspot start
